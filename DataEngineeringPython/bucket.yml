@@ -1,0 +1,6 @@
+flows:
+  c9e07eae-6dcb-4993-bce0-073c93b88eb4: {ver: 1, file: NYC_311_pipeline_2.snapshot,
+    comments: version 4, author: anonymous, created: 1790347127019, flowName: NYC
+      311 pipeline 2, flowDesc: NYC API to ElasticSearch}
+layoutVer: 1
+bucketId: 4f2cf949-b080-4778-a152-236c5f49a135

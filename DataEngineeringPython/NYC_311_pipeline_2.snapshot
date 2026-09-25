@@ -1,0 +1,1153 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : {
+        "f3e7db89-75b7-30a6-b246-47fd86dc3197" : {
+          "identifier" : "f3e7db89-75b7-30a6-b246-47fd86dc3197",
+          "name" : "ElasticSearchClientServiceImpl"
+        }
+      },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "2a653c57-6630-34c4-9d9a-f67d9cb52b35",
+            "name" : "Query NYC311",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "6bb41777-497b-3285-a49d-4c72b4abe64a",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "04d9681a-6ebb-371a-a7bf-695ea5fb333c",
+            "name" : " Start Flow Fake Data",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 17
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "8243476a-f04f-3c20-b29e-f23b743d147c",
+            "name" : "SplitJson",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "780dab15-923f-36b6-a8dd-d2fbdbfe4892",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "2a653c57-6630-34c4-9d9a-f67d9cb52b35",
+            "name" : "Query NYC311",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 23
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "ccbb479e-da83-3d65-959f-706c761f4b7f",
+            "name" : "GetEveryPageNYC311Pages",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "6860ed4d-3ce1-30d5-98e1-a946d55a1eab",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "637f503f-3dbd-36ec-b127-9a858ff321ea",
+            "name" : "Query NYC311 - Closed",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 22
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "8243476a-f04f-3c20-b29e-f23b743d147c",
+            "name" : "SplitJson",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "bff9ea0d-5f4d-303d-a34a-a759f67f3a2a",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "637f503f-3dbd-36ec-b127-9a858ff321ea",
+            "name" : "Query NYC311 - Closed",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 20
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "1ebc00a2-69e0-311e-9e06-ca2c030e9b49",
+            "name" : "EvaluateJsonPath",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "267e91ee-565f-3233-9320-528132864f54",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "a8d0ca62-38cb-3b6f-b873-18a089c4b5c4",
+            "name" : "coords",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 25
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "ccbb479e-da83-3d65-959f-706c761f4b7f",
+            "name" : "GetEveryPageNYC311Pages",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "23d1b23f-3138-3858-b3b3-eb433fa7259c",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "2a653c57-6630-34c4-9d9a-f67d9cb52b35",
+            "name" : "Query NYC311",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 18
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "ab1e2eb7-e45a-3788-91b7-64407606f853",
+            "name" : "New DataWareHouse",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "c682e6c7-a0b2-3d57-9753-989722fd9e85",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "unmatched" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "1ebc00a2-69e0-311e-9e06-ca2c030e9b49",
+            "name" : "EvaluateJsonPath",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 27
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "a8d0ca62-38cb-3b6f-b873-18a089c4b5c4",
+            "name" : "coords",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "21143696-298b-3da1-81a0-d5bf98435bb4",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "split" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "8243476a-f04f-3c20-b29e-f23b743d147c",
+            "name" : "SplitJson",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 24
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ {
+            "x" : 6017.25048828125,
+            "y" : -1752.2177734375
+          }, {
+            "x" : 6017.25048828125,
+            "y" : -1702.2177734375
+          } ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "ccbb479e-da83-3d65-959f-706c761f4b7f",
+            "name" : "GetEveryPageNYC311Pages",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "acf9d1d9-d45a-31a5-9bab-7015108163bd",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "ccbb479e-da83-3d65-959f-706c761f4b7f",
+            "name" : "GetEveryPageNYC311Pages",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 19
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "637f503f-3dbd-36ec-b127-9a858ff321ea",
+            "name" : "Query NYC311 - Closed",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "ce952ed2-e42a-3686-895c-3171e5cff09c",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "04d9681a-6ebb-371a-a7bf-695ea5fb333c",
+            "name" : " Start Flow Fake Data",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 16
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "c3457b00-3925-3276-918f-ed9372a7f16b",
+            "name" : "PutElasticsearchJson",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "f4b965d4-e005-3523-acea-c6475eff8b8f",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "matched" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "1ebc00a2-69e0-311e-9e06-ca2c030e9b49",
+            "name" : "EvaluateJsonPath",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 26
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "8243476a-f04f-3c20-b29e-f23b743d147c",
+            "name" : "SplitJson",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "154c6b99-c719-3b52-b391-86fa1bd0dcee",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "ccbb479e-da83-3d65-959f-706c761f4b7f",
+            "name" : "GetEveryPageNYC311Pages",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 21
+        } ],
+        "controllerServices" : [ ],
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "NYC",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 5544.0,
+          "y" : -2616.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-scripting-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "a8d0ca62-38cb-3b6f-b873-18a089c4b5c4",
+          "name" : "coords",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 5789.88916015625,
+            "y" : -1171.7777709960938
+          },
+          "properties" : {
+            "Script Engine" : "Groovy",
+            "Script Body" : "// Processor: \"coords\" — same role as the original, adapted field names.\n// NYC 311 already provides latitude/longitude and created_date directly,\n// so this just combines them the same way the book's version did for\n// SeeClickFix's lat/lng/created_at.\n\nimport org.apache.commons.io.IOUtils\nimport java.nio.charset.StandardCharsets\nimport groovy.json.JsonSlurper\nimport groovy.json.JsonOutput\nimport org.apache.nifi.processor.io.StreamCallback\n\ndef flowFile = session.get()\nif (!flowFile) return\n\nboolean errorOccurred = false\ndef reply = null\n\nflowFile = session.write(flowFile, { inputStream, outputStream ->\n    try {\n        def text = IOUtils.toString(inputStream, StandardCharsets.UTF_8)\n        reply = new JsonSlurper().parseText(text)\n\n        reply.coords = \"${reply.latitude},${reply.longitude}\"\n        reply.opendate = reply.created_date?.toString()?.split('T')?.getAt(0)\n\n        outputStream.write(\n            JsonOutput.prettyPrint(JsonOutput.toJson(reply)).getBytes(StandardCharsets.UTF_8)\n        )\n    } catch (Exception e) {\n        errorOccurred = true\n        outputStream.write(\n            JsonOutput.prettyPrint(JsonOutput.toJson(reply)).getBytes(StandardCharsets.UTF_8)\n        )\n    }\n} as StreamCallback)\n\nsession.transfer(flowFile, errorOccurred ? REL_FAILURE : REL_SUCCESS)"
+          },
+          "propertyDescriptors" : {
+            "Script File" : {
+              "displayName" : "Script File",
+              "identifiesControllerService" : false,
+              "name" : "Script File",
+              "sensitive" : false
+            },
+            "Script Engine" : {
+              "displayName" : "Script Engine",
+              "identifiesControllerService" : false,
+              "name" : "Script Engine",
+              "sensitive" : false
+            },
+            "Script Body" : {
+              "displayName" : "Script Body",
+              "identifiesControllerService" : false,
+              "name" : "Script Body",
+              "sensitive" : false
+            },
+            "Module Directory" : {
+              "displayName" : "Module Directory",
+              "identifiesControllerService" : false,
+              "name" : "Module Directory",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.script.ExecuteScript",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-scripting-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "2a653c57-6630-34c4-9d9a-f67d9cb52b35",
+          "name" : "Query NYC311",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 5253.88916015625,
+            "y" : -2195.7777709960938
+          },
+          "properties" : {
+            "Script Engine" : "Groovy",
+            "Script Body" : "import java.nio.charset.StandardCharsets\nimport org.apache.nifi.processor.io.OutputStreamCallback\n\ndef flowFile = session.get()\nif (!flowFile) return\n\ndef PAGE_SIZE = 100\n\ndef urlStr = \"https://data.cityofnewyork.us/resource/erm2-nwe9.json?\\$limit=${PAGE_SIZE}\"\n\nlog.info(\"NYC311 URL = ${urlStr}\")\n\nflowFile = session.write(flowFile, { outputStream ->\n\n    def connection = new URL(urlStr).openConnection()\n    connection.setRequestMethod(\"GET\")\n    connection.setRequestProperty(\"Accept\", \"application/json\")\n\n    def responseCode = connection.getResponseCode()\n\n    log.info(\"NYC311 HTTP response code = ${responseCode}\")\n\n    def rawreply = connection.getInputStream().getText(\"UTF-8\")\n\n    log.info(\"NYC311 response length = ${rawreply.length()}\")\n    log.info(\"NYC311 response = ${rawreply.take(500)}\")\n\n    outputStream.write(\n        rawreply.getBytes(StandardCharsets.UTF_8)\n    )\n\n} as OutputStreamCallback)\n\nflowFile = session.putAttribute(\n    flowFile,\n    'nyc311_offset',\n    '0'\n)\n\nflowFile = session.putAttribute(\n    flowFile,\n    'nyc311_page_size',\n    PAGE_SIZE.toString()\n)\n\nsession.transfer(flowFile, REL_SUCCESS)"
+          },
+          "propertyDescriptors" : {
+            "Script File" : {
+              "displayName" : "Script File",
+              "identifiesControllerService" : false,
+              "name" : "Script File",
+              "sensitive" : false
+            },
+            "Script Engine" : {
+              "displayName" : "Script Engine",
+              "identifiesControllerService" : false,
+              "name" : "Script Engine",
+              "sensitive" : false
+            },
+            "Script Body" : {
+              "displayName" : "Script Body",
+              "identifiesControllerService" : false,
+              "name" : "Script Body",
+              "sensitive" : false
+            },
+            "Module Directory" : {
+              "displayName" : "Module Directory",
+              "identifiesControllerService" : false,
+              "name" : "Module Directory",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "2 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.script.ExecuteScript",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "04d9681a-6ebb-371a-a7bf-695ea5fb333c",
+          "name" : " Start Flow Fake Data",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 5821.88916015625,
+            "y" : -2451.7777709960938
+          },
+          "properties" : {
+            "File Size" : "0B",
+            "Batch Size" : "1",
+            "Unique FlowFiles" : "false",
+            "Character Set" : "UTF-8",
+            "Data Format" : "Text"
+          },
+          "propertyDescriptors" : {
+            "File Size" : {
+              "displayName" : "File Size",
+              "identifiesControllerService" : false,
+              "name" : "File Size",
+              "sensitive" : false
+            },
+            "Batch Size" : {
+              "displayName" : "Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Batch Size",
+              "sensitive" : false
+            },
+            "Unique FlowFiles" : {
+              "displayName" : "Unique FlowFiles",
+              "identifiesControllerService" : false,
+              "name" : "Unique FlowFiles",
+              "sensitive" : false
+            },
+            "Mime Type" : {
+              "displayName" : "Mime Type",
+              "identifiesControllerService" : false,
+              "name" : "Mime Type",
+              "sensitive" : false
+            },
+            "Custom Text" : {
+              "displayName" : "Custom Text",
+              "identifiesControllerService" : false,
+              "name" : "Custom Text",
+              "sensitive" : false
+            },
+            "Character Set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "Character Set",
+              "sensitive" : false
+            },
+            "Data Format" : {
+              "displayName" : "Data Format",
+              "identifiesControllerService" : false,
+              "name" : "Data Format",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "1 hour",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-scripting-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "637f503f-3dbd-36ec-b127-9a858ff321ea",
+          "name" : "Query NYC311 - Closed",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 6221.88916015625,
+            "y" : -2043.7777709960938
+          },
+          "properties" : {
+            "Script Engine" : "Groovy",
+            "Script Body" : "import java.nio.charset.StandardCharsets\nimport org.apache.nifi.processor.io.OutputStreamCallback\n\ndef flowFile = session.get()\nif (!flowFile) return\n\ndef PAGE_SIZE = 100\n\ndef urlStr =\n    \"https://data.cityofnewyork.us/resource/erm2-nwe9.json\" +\n    \"?\\$limit=${PAGE_SIZE}\" +\n    \"&\\$offset=0\" +\n    \"&\\$where=status%3D%27Closed%27\" +\n    \"&\\$order=created_date%20DESC\"\n\nlog.info(\"NYC311 Closed URL: ${urlStr}\")\n\nflowFile = session.write(flowFile, { outputStream ->\n\n    def connection = new URL(urlStr).openConnection()\n\n    connection.setRequestProperty(\n        \"Accept\",\n        \"application/json\"\n    )\n\n    def responseCode = connection.getResponseCode()\n\n    log.info(\"NYC311 HTTP response: ${responseCode}\")\n\n    if (responseCode != 200) {\n        throw new Exception(\n            \"NYC311 returned HTTP ${responseCode}\"\n        )\n    }\n\n    def rawreply =\n        connection.getInputStream().getText(\"UTF-8\")\n\n    log.info(\n        \"NYC311 Closed response length: ${rawreply.length()}\"\n    )\n\n    outputStream.write(\n        rawreply.getBytes(StandardCharsets.UTF_8)\n    )\n\n} as OutputStreamCallback)\n\nflowFile = session.putAttribute(\n    flowFile,\n    'nyc311_offset',\n    '0'\n)\n\nflowFile = session.putAttribute(\n    flowFile,\n    'nyc311_page_size',\n    PAGE_SIZE.toString()\n)\n\nflowFile = session.putAttribute(\n    flowFile,\n    'nyc311_status_filter',\n    'Closed'\n)\n\nsession.transfer(flowFile, REL_SUCCESS)"
+          },
+          "propertyDescriptors" : {
+            "Script File" : {
+              "displayName" : "Script File",
+              "identifiesControllerService" : false,
+              "name" : "Script File",
+              "sensitive" : false
+            },
+            "Script Engine" : {
+              "displayName" : "Script Engine",
+              "identifiesControllerService" : false,
+              "name" : "Script Engine",
+              "sensitive" : false
+            },
+            "Script Body" : {
+              "displayName" : "Script Body",
+              "identifiesControllerService" : false,
+              "name" : "Script Body",
+              "sensitive" : false
+            },
+            "Module Directory" : {
+              "displayName" : "Module Directory",
+              "identifiesControllerService" : false,
+              "name" : "Module Directory",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "2 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.script.ExecuteScript",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-scripting-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "ccbb479e-da83-3d65-959f-706c761f4b7f",
+          "name" : "GetEveryPageNYC311Pages",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 5541.88916015625,
+            "y" : -1787.7777709960938
+          },
+          "properties" : {
+            "Script Engine" : "Groovy",
+            "Script Body" : "// Processor: Get Every NYC311 Page\n// Retrieves a fixed TOTAL_RECORDS from NYC 311,\n// using PAGE_SIZE records per API request.\n//\n// FIX: the two \"stop\" branches now transfer to REL_FAILURE instead of\n// REL_SUCCESS. Since \"success\" is wired to both SplitJson AND back into\n// this same processor (self-loop), routing the stop condition through\n// success caused it to re-forward the same last page forever in an\n// infinite no-op loop, flooding Elasticsearch with duplicates. Routing\n// to failure (already auto-terminated on this processor) correctly ends\n// the loop without re-sending anything.\n\nimport org.apache.commons.io.IOUtils\nimport java.nio.charset.StandardCharsets\nimport groovy.json.JsonSlurper\nimport org.apache.nifi.processor.io.StreamCallback\n\ndef flowFile = session.get()\nif (!flowFile) return\n\n// ===============================\n// CHANGE THESE VALUES\n// ===============================\n\ndef TOTAL_RECORDS = 1000\ndef PAGE_SIZE = 100\n\n// ===============================\n\ndef currentOffset =\n    (flowFile.getAttribute('nyc311_offset') ?: '0') as Integer\n\ndef statusFilter =\n    flowFile.getAttribute('nyc311_status_filter')\n\n// Read the current page\ndef currentText = null\ndef currentRows = null\n\nflowFile = session.write(flowFile, { inputStream, outputStream ->\n\n    currentText = IOUtils.toString(\n        inputStream,\n        StandardCharsets.UTF_8\n    )\n\n    currentRows = new JsonSlurper().parseText(currentText)\n\n    // Keep the current page unchanged\n    outputStream.write(\n        currentText.getBytes(StandardCharsets.UTF_8)\n    )\n\n} as StreamCallback)\n\n// How many records have we received so far?\ndef recordsReceived = currentOffset + currentRows.size()\n\nlog.info(\n    \"NYC311 pagination: offset=${currentOffset}, \" +\n    \"pageSize=${currentRows.size()}, \" +\n    \"totalReceived=${recordsReceived}, \" +\n    \"target=${TOTAL_RECORDS}\"\n)\n\n// ========================================\n// STOP CONDITIONS\n// ========================================\n\n// We have reached the requested number\nif (recordsReceived >= TOTAL_RECORDS) {\n\n    log.info(\n        \"NYC311 target reached: ${recordsReceived} records\"\n    )\n\n    flowFile = session.putAttribute(\n        flowFile,\n        'nyc311_finished',\n        'true'\n    )\n\n    // FIXED: was REL_SUCCESS — caused infinite duplicate re-forwarding\n    session.transfer(flowFile, REL_FAILURE)\n    return\n}\n\n// The API returned fewer records than requested.\n// This means there are no more records.\nif (currentRows.size() < PAGE_SIZE) {\n\n    log.info(\n        \"NYC311 API returned fewer than PAGE_SIZE. \" +\n        \"Pagination finished at ${recordsReceived} records.\"\n    )\n\n    flowFile = session.putAttribute(\n        flowFile,\n        'nyc311_finished',\n        'true'\n    )\n\n    // FIXED: was REL_SUCCESS — caused infinite duplicate re-forwarding\n    session.transfer(flowFile, REL_FAILURE)\n    return\n}\n\n// ========================================\n// GET NEXT PAGE\n// ========================================\n\ndef nextOffset = currentOffset + currentRows.size()\n\n// Don't request more than TOTAL_RECORDS\ndef remaining = TOTAL_RECORDS - nextOffset\n\ndef nextPageSize = Math.min(\n    PAGE_SIZE,\n    remaining\n)\n\ndef urlStr =\n    \"https://data.cityofnewyork.us/resource/erm2-nwe9.json\" +\n    \"?\\$limit=${nextPageSize}\" +\n    \"&\\$offset=${nextOffset}\"\n\n// Keep the Closed filter if it exists\nif (statusFilter) {\n\n    def encodedFilter =\n        java.net.URLEncoder.encode(\n            \"status='${statusFilter}'\",\n            \"UTF-8\"\n        )\n\n    urlStr += \"&\\$where=${encodedFilter}\"\n}\n\n// Sort newest first\ndef encodedOrder =\n    java.net.URLEncoder.encode(\n        \"created_date DESC\",\n        \"UTF-8\"\n    )\n\nurlStr += \"&\\$order=${encodedOrder}\"\n\nlog.info(\n    \"Requesting next NYC311 page: ${urlStr}\"\n)\n\n// ========================================\n// REQUEST NEXT PAGE\n// ========================================\n\ntry {\n\n    def connection =\n        new URL(urlStr).openConnection()\n\n    connection.setRequestProperty(\n        \"Accept\",\n        \"application/json\"\n    )\n\n    def responseCode =\n        connection.getResponseCode()\n\n    if (responseCode != 200) {\n\n        throw new Exception(\n            \"NYC API returned HTTP ${responseCode}\"\n        )\n    }\n\n    def nextReply =\n        connection.getInputStream().getText(\"UTF-8\")\n\n    // Replace current page with next page\n    flowFile = session.write(\n        flowFile,\n        { outputStream ->\n            outputStream.write(\n                nextReply.getBytes(\n                    StandardCharsets.UTF_8\n                )\n            )\n        } as org.apache.nifi.processor.io.OutputStreamCallback\n    )\n\n    // Save offset for next execution\n    flowFile = session.putAttribute(\n        flowFile,\n        'nyc311_offset',\n        nextOffset.toString()\n    )\n\n    flowFile = session.putAttribute(\n        flowFile,\n        'nyc311_page_size',\n        nextPageSize.toString()\n    )\n\n    flowFile = session.putAttribute(\n        flowFile,\n        'nyc311_total_records',\n        TOTAL_RECORDS.toString()\n    )\n\n    session.transfer(flowFile, REL_SUCCESS)\n\n} catch (Exception e) {\n\n    log.error(\n        \"Failed to retrieve NYC311 page\",\n        e\n    )\n\n    session.transfer(flowFile, REL_FAILURE)\n}"
+          },
+          "propertyDescriptors" : {
+            "Script File" : {
+              "displayName" : "Script File",
+              "identifiesControllerService" : false,
+              "name" : "Script File",
+              "sensitive" : false
+            },
+            "Script Engine" : {
+              "displayName" : "Script Engine",
+              "identifiesControllerService" : false,
+              "name" : "Script Engine",
+              "sensitive" : false
+            },
+            "Script Body" : {
+              "displayName" : "Script Body",
+              "identifiesControllerService" : false,
+              "name" : "Script Body",
+              "sensitive" : false
+            },
+            "Module Directory" : {
+              "displayName" : "Module Directory",
+              "identifiesControllerService" : false,
+              "name" : "Module Directory",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "2 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.script.ExecuteScript",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-elasticsearch-restapi-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "ab1e2eb7-e45a-3788-91b7-64407606f853",
+          "name" : "New DataWareHouse",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 6232.0,
+            "y" : -736.0
+          },
+          "properties" : {
+            "Treat Not Found as Success" : "true",
+            "Max FlowFiles Per Batch" : "100",
+            "Max Batch Size" : "10 MB",
+            "Max JSON Field String Length" : "20 MB",
+            "Output Bulk Request" : "false",
+            "Index Operation" : "index",
+            "Input Content Format" : "Single JSON",
+            "Log Error Responses" : "false",
+            "Output Error Responses" : "false",
+            "Suppress Nulls" : "never-suppress",
+            "Scripted Upsert" : "false",
+            "Character Set" : "UTF-8"
+          },
+          "propertyDescriptors" : {
+            "Dynamic Templates" : {
+              "displayName" : "Dynamic Templates",
+              "identifiesControllerService" : false,
+              "name" : "Dynamic Templates",
+              "sensitive" : false
+            },
+            "Treat Not Found as Success" : {
+              "displayName" : "Treat Not Found as Success",
+              "identifiesControllerService" : false,
+              "name" : "Treat Not Found as Success",
+              "sensitive" : false
+            },
+            "Script" : {
+              "displayName" : "Script",
+              "identifiesControllerService" : false,
+              "name" : "Script",
+              "sensitive" : false
+            },
+            "Max FlowFiles Per Batch" : {
+              "displayName" : "Max FlowFiles Per Batch",
+              "identifiesControllerService" : false,
+              "name" : "Max FlowFiles Per Batch",
+              "sensitive" : false
+            },
+            "Max Batch Size" : {
+              "displayName" : "Max Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Max Batch Size",
+              "sensitive" : false
+            },
+            "Max JSON Field String Length" : {
+              "displayName" : "Max JSON Field String Length",
+              "identifiesControllerService" : false,
+              "name" : "Max JSON Field String Length",
+              "sensitive" : false
+            },
+            "Output Bulk Request" : {
+              "displayName" : "Output Bulk Request",
+              "identifiesControllerService" : false,
+              "name" : "Output Bulk Request",
+              "sensitive" : false
+            },
+            "Index Operation" : {
+              "displayName" : "Index Operation",
+              "identifiesControllerService" : false,
+              "name" : "Index Operation",
+              "sensitive" : false
+            },
+            "Index" : {
+              "displayName" : "Index",
+              "identifiesControllerService" : false,
+              "name" : "Index",
+              "sensitive" : false
+            },
+            "Input Content Format" : {
+              "displayName" : "Input Content Format",
+              "identifiesControllerService" : false,
+              "name" : "Input Content Format",
+              "sensitive" : false
+            },
+            "Log Error Responses" : {
+              "displayName" : "Log Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Log Error Responses",
+              "sensitive" : false
+            },
+            "Output Error Responses" : {
+              "displayName" : "Output Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Output Error Responses",
+              "sensitive" : false
+            },
+            "Identifier Attribute" : {
+              "displayName" : "Identifier Attribute",
+              "identifiesControllerService" : false,
+              "name" : "Identifier Attribute",
+              "sensitive" : false
+            },
+            "Type" : {
+              "displayName" : "Type",
+              "identifiesControllerService" : false,
+              "name" : "Type",
+              "sensitive" : false
+            },
+            "Suppress Nulls" : {
+              "displayName" : "Suppress Nulls",
+              "identifiesControllerService" : false,
+              "name" : "Suppress Nulls",
+              "sensitive" : false
+            },
+            "Scripted Upsert" : {
+              "displayName" : "Scripted Upsert",
+              "identifiesControllerService" : false,
+              "name" : "Scripted Upsert",
+              "sensitive" : false
+            },
+            "Identifier Field" : {
+              "displayName" : "Identifier Field",
+              "identifiesControllerService" : false,
+              "name" : "Identifier Field",
+              "sensitive" : false
+            },
+            "Client Service" : {
+              "displayName" : "Client Service",
+              "identifiesControllerService" : true,
+              "name" : "Client Service",
+              "sensitive" : false
+            },
+            "Character Set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "Character Set",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchJson",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "original", "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "8243476a-f04f-3c20-b29e-f23b743d147c",
+          "name" : "SplitJson",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 5933.88916015625,
+            "y" : -1515.7777709960938
+          },
+          "properties" : {
+            "Max String Length" : "20 MB",
+            "Null Value Representation" : "empty string",
+            "JsonPath Expression" : "$[*]"
+          },
+          "propertyDescriptors" : {
+            "Max String Length" : {
+              "displayName" : "Max String Length",
+              "identifiesControllerService" : false,
+              "name" : "Max String Length",
+              "sensitive" : false
+            },
+            "Null Value Representation" : {
+              "displayName" : "Null Value Representation",
+              "identifiesControllerService" : false,
+              "name" : "Null Value Representation",
+              "sensitive" : false
+            },
+            "JsonPath Expression" : {
+              "displayName" : "JsonPath Expression",
+              "identifiesControllerService" : false,
+              "name" : "JsonPath Expression",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.SplitJson",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "1ebc00a2-69e0-311e-9e06-ca2c030e9b49",
+          "name" : "EvaluateJsonPath",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 5773.88916015625,
+            "y" : -947.7777709960938
+          },
+          "properties" : {
+            "Destination" : "flowfile-attribute",
+            "Max String Length" : "20 MB",
+            "unique_key" : "$.unique_key",
+            "Return Type" : "auto-detect",
+            "Null Value Representation" : "empty string",
+            "Path Not Found Behavior" : "ignore"
+          },
+          "propertyDescriptors" : {
+            "Destination" : {
+              "displayName" : "Destination",
+              "identifiesControllerService" : false,
+              "name" : "Destination",
+              "sensitive" : false
+            },
+            "Max String Length" : {
+              "displayName" : "Max String Length",
+              "identifiesControllerService" : false,
+              "name" : "Max String Length",
+              "sensitive" : false
+            },
+            "unique_key" : {
+              "displayName" : "unique_key",
+              "identifiesControllerService" : false,
+              "name" : "unique_key",
+              "sensitive" : false
+            },
+            "Return Type" : {
+              "displayName" : "Return Type",
+              "identifiesControllerService" : false,
+              "name" : "Return Type",
+              "sensitive" : false
+            },
+            "Null Value Representation" : {
+              "displayName" : "Null Value Representation",
+              "identifiesControllerService" : false,
+              "name" : "Null Value Representation",
+              "sensitive" : false
+            },
+            "Path Not Found Behavior" : {
+              "displayName" : "Path Not Found Behavior",
+              "identifiesControllerService" : false,
+              "name" : "Path Not Found Behavior",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "original", "failure", "retry", "errors", "successful" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-elasticsearch-restapi-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "c3457b00-3925-3276-918f-ed9372a7f16b",
+          "name" : "PutElasticsearchJson",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 5776.0,
+            "y" : -576.0
+          },
+          "properties" : {
+            "Treat Not Found as Success" : "true",
+            "Max FlowFiles Per Batch" : "50",
+            "Max Batch Size" : "1 MB",
+            "Max JSON Field String Length" : "20 MB",
+            "Output Bulk Request" : "false",
+            "Index Operation" : "upsert",
+            "Index" : "nyc311",
+            "Input Content Format" : "Single JSON",
+            "Log Error Responses" : "false",
+            "Output Error Responses" : "false",
+            "Identifier Attribute" : "unique_key",
+            "Suppress Nulls" : "never-suppress",
+            "Scripted Upsert" : "false",
+            "Client Service" : "f3e7db89-75b7-30a6-b246-47fd86dc3197",
+            "Character Set" : "UTF-8"
+          },
+          "propertyDescriptors" : {
+            "Dynamic Templates" : {
+              "displayName" : "Dynamic Templates",
+              "identifiesControllerService" : false,
+              "name" : "Dynamic Templates",
+              "sensitive" : false
+            },
+            "Treat Not Found as Success" : {
+              "displayName" : "Treat Not Found as Success",
+              "identifiesControllerService" : false,
+              "name" : "Treat Not Found as Success",
+              "sensitive" : false
+            },
+            "Script" : {
+              "displayName" : "Script",
+              "identifiesControllerService" : false,
+              "name" : "Script",
+              "sensitive" : false
+            },
+            "Max FlowFiles Per Batch" : {
+              "displayName" : "Max FlowFiles Per Batch",
+              "identifiesControllerService" : false,
+              "name" : "Max FlowFiles Per Batch",
+              "sensitive" : false
+            },
+            "Max Batch Size" : {
+              "displayName" : "Max Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Max Batch Size",
+              "sensitive" : false
+            },
+            "Max JSON Field String Length" : {
+              "displayName" : "Max JSON Field String Length",
+              "identifiesControllerService" : false,
+              "name" : "Max JSON Field String Length",
+              "sensitive" : false
+            },
+            "Output Bulk Request" : {
+              "displayName" : "Output Bulk Request",
+              "identifiesControllerService" : false,
+              "name" : "Output Bulk Request",
+              "sensitive" : false
+            },
+            "Index Operation" : {
+              "displayName" : "Index Operation",
+              "identifiesControllerService" : false,
+              "name" : "Index Operation",
+              "sensitive" : false
+            },
+            "Index" : {
+              "displayName" : "Index",
+              "identifiesControllerService" : false,
+              "name" : "Index",
+              "sensitive" : false
+            },
+            "Input Content Format" : {
+              "displayName" : "Input Content Format",
+              "identifiesControllerService" : false,
+              "name" : "Input Content Format",
+              "sensitive" : false
+            },
+            "Log Error Responses" : {
+              "displayName" : "Log Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Log Error Responses",
+              "sensitive" : false
+            },
+            "Output Error Responses" : {
+              "displayName" : "Output Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Output Error Responses",
+              "sensitive" : false
+            },
+            "Identifier Attribute" : {
+              "displayName" : "Identifier Attribute",
+              "identifiesControllerService" : false,
+              "name" : "Identifier Attribute",
+              "sensitive" : false
+            },
+            "Type" : {
+              "displayName" : "Type",
+              "identifiesControllerService" : false,
+              "name" : "Type",
+              "sensitive" : false
+            },
+            "Suppress Nulls" : {
+              "displayName" : "Suppress Nulls",
+              "identifiesControllerService" : false,
+              "name" : "Suppress Nulls",
+              "sensitive" : false
+            },
+            "Scripted Upsert" : {
+              "displayName" : "Scripted Upsert",
+              "identifiesControllerService" : false,
+              "name" : "Scripted Upsert",
+              "sensitive" : false
+            },
+            "Identifier Field" : {
+              "displayName" : "Identifier Field",
+              "identifiesControllerService" : false,
+              "name" : "Identifier Field",
+              "sensitive" : false
+            },
+            "Client Service" : {
+              "displayName" : "Client Service",
+              "identifiesControllerService" : true,
+              "name" : "Client Service",
+              "sensitive" : false
+            },
+            "Character Set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "Character Set",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchJson",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
