@@ -111,36 +111,6 @@
           "destination" : {
             "comments" : "",
             "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
-            "id" : "8243476a-f04f-3c20-b29e-f23b743d147c",
-            "name" : "SplitJson",
-            "type" : "PROCESSOR"
-          },
-          "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
-          "identifier" : "bff9ea0d-5f4d-303d-a34a-a759f67f3a2a",
-          "labelIndex" : 0,
-          "loadBalanceCompression" : "DO_NOT_COMPRESS",
-          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-          "name" : "",
-          "partitioningAttribute" : "",
-          "prioritizers" : [ ],
-          "selectedRelationships" : [ "success" ],
-          "source" : {
-            "comments" : "",
-            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
-            "id" : "637f503f-3dbd-36ec-b127-9a858ff321ea",
-            "name" : "Query NYC311 - Closed",
-            "type" : "PROCESSOR"
-          },
-          "zIndex" : 20
-        }, {
-          "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
-          "bends" : [ ],
-          "componentType" : "CONNECTION",
-          "destination" : {
-            "comments" : "",
-            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
             "id" : "1ebc00a2-69e0-311e-9e06-ca2c030e9b49",
             "name" : "EvaluateJsonPath",
             "type" : "PROCESSOR"
@@ -163,6 +133,36 @@
             "type" : "PROCESSOR"
           },
           "zIndex" : 25
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "8243476a-f04f-3c20-b29e-f23b743d147c",
+            "name" : "SplitJson",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "bff9ea0d-5f4d-303d-a34a-a759f67f3a2a",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "637f503f-3dbd-36ec-b127-9a858ff321ea",
+            "name" : "Query NYC311 - Closed",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 20
         }, {
           "backPressureDataSizeThreshold" : "1 GB",
           "backPressureObjectThreshold" : 10000,
@@ -223,6 +223,36 @@
             "type" : "PROCESSOR"
           },
           "zIndex" : 27
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "e99ca7ff-440e-3df4-9300-111d99b0df87",
+            "name" : "PutElasticsearchJson",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "ff71ec9c-4fa2-3c26-bdd2-89f8af1c7963",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "errors" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+            "id" : "ab1e2eb7-e45a-3788-91b7-64407606f853",
+            "name" : "New DataWareHouse",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 28
         }, {
           "backPressureDataSizeThreshold" : "1 GB",
           "backPressureObjectThreshold" : 10000,
@@ -719,6 +749,163 @@
           "position" : {
             "x" : 6232.0,
             "y" : -736.0
+          },
+          "properties" : {
+            "Treat Not Found as Success" : "true",
+            "Max FlowFiles Per Batch" : "100",
+            "Max Batch Size" : "10 MB",
+            "Max JSON Field String Length" : "20 MB",
+            "Output Bulk Request" : "false",
+            "Index Operation" : "index",
+            "Input Content Format" : "Single JSON",
+            "Log Error Responses" : "false",
+            "Output Error Responses" : "false",
+            "Suppress Nulls" : "never-suppress",
+            "Scripted Upsert" : "false",
+            "Character Set" : "UTF-8"
+          },
+          "propertyDescriptors" : {
+            "Dynamic Templates" : {
+              "displayName" : "Dynamic Templates",
+              "identifiesControllerService" : false,
+              "name" : "Dynamic Templates",
+              "sensitive" : false
+            },
+            "Treat Not Found as Success" : {
+              "displayName" : "Treat Not Found as Success",
+              "identifiesControllerService" : false,
+              "name" : "Treat Not Found as Success",
+              "sensitive" : false
+            },
+            "Script" : {
+              "displayName" : "Script",
+              "identifiesControllerService" : false,
+              "name" : "Script",
+              "sensitive" : false
+            },
+            "Max FlowFiles Per Batch" : {
+              "displayName" : "Max FlowFiles Per Batch",
+              "identifiesControllerService" : false,
+              "name" : "Max FlowFiles Per Batch",
+              "sensitive" : false
+            },
+            "Max Batch Size" : {
+              "displayName" : "Max Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Max Batch Size",
+              "sensitive" : false
+            },
+            "Max JSON Field String Length" : {
+              "displayName" : "Max JSON Field String Length",
+              "identifiesControllerService" : false,
+              "name" : "Max JSON Field String Length",
+              "sensitive" : false
+            },
+            "Output Bulk Request" : {
+              "displayName" : "Output Bulk Request",
+              "identifiesControllerService" : false,
+              "name" : "Output Bulk Request",
+              "sensitive" : false
+            },
+            "Index Operation" : {
+              "displayName" : "Index Operation",
+              "identifiesControllerService" : false,
+              "name" : "Index Operation",
+              "sensitive" : false
+            },
+            "Index" : {
+              "displayName" : "Index",
+              "identifiesControllerService" : false,
+              "name" : "Index",
+              "sensitive" : false
+            },
+            "Input Content Format" : {
+              "displayName" : "Input Content Format",
+              "identifiesControllerService" : false,
+              "name" : "Input Content Format",
+              "sensitive" : false
+            },
+            "Log Error Responses" : {
+              "displayName" : "Log Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Log Error Responses",
+              "sensitive" : false
+            },
+            "Output Error Responses" : {
+              "displayName" : "Output Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Output Error Responses",
+              "sensitive" : false
+            },
+            "Identifier Attribute" : {
+              "displayName" : "Identifier Attribute",
+              "identifiesControllerService" : false,
+              "name" : "Identifier Attribute",
+              "sensitive" : false
+            },
+            "Type" : {
+              "displayName" : "Type",
+              "identifiesControllerService" : false,
+              "name" : "Type",
+              "sensitive" : false
+            },
+            "Suppress Nulls" : {
+              "displayName" : "Suppress Nulls",
+              "identifiesControllerService" : false,
+              "name" : "Suppress Nulls",
+              "sensitive" : false
+            },
+            "Scripted Upsert" : {
+              "displayName" : "Scripted Upsert",
+              "identifiesControllerService" : false,
+              "name" : "Scripted Upsert",
+              "sensitive" : false
+            },
+            "Identifier Field" : {
+              "displayName" : "Identifier Field",
+              "identifiesControllerService" : false,
+              "name" : "Identifier Field",
+              "sensitive" : false
+            },
+            "Client Service" : {
+              "displayName" : "Client Service",
+              "identifiesControllerService" : true,
+              "name" : "Client Service",
+              "sensitive" : false
+            },
+            "Character Set" : {
+              "displayName" : "Character Set",
+              "identifiesControllerService" : false,
+              "name" : "Character Set",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchJson",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-elasticsearch-restapi-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "3c2703bb-d69d-3d84-bfa5-011a09caf010",
+          "identifier" : "e99ca7ff-440e-3df4-9300-111d99b0df87",
+          "name" : "PutElasticsearchJson",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 6648.0,
+            "y" : -512.0
           },
           "properties" : {
             "Treat Not Found as Success" : "true",
