@@ -1,0 +1,425 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : {
+        "d25142ea-1a75-381f-9347-f5b6d6cb1590" : {
+          "identifier" : "d25142ea-1a75-381f-9347-f5b6d6cb1590",
+          "name" : "CSVReader"
+        },
+        "51b86696-e365-36d8-9fb5-7c9ab43d30f1" : {
+          "identifier" : "51b86696-e365-36d8-9fb5-7c9ab43d30f1",
+          "name" : "DBCPConnectionPool"
+        },
+        "f3e7db89-75b7-30a6-b246-47fd86dc3197" : {
+          "identifier" : "f3e7db89-75b7-30a6-b246-47fd86dc3197",
+          "name" : "ElasticSearchClientServiceImpl"
+        },
+        "bfa7d7a9-82d7-3544-a88a-c9740e386240" : {
+          "identifier" : "bfa7d7a9-82d7-3544-a88a-c9740e386240",
+          "name" : "CSVRecordSetWriter"
+        }
+      },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "1112f29b-53fc-3f40-8e11-e2badcb87090",
+            "id" : "f7306d77-01a0-1000-3b3a-d1358415c2d9",
+            "name" : "PutElasticsearchRecord",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "1112f29b-53fc-3f40-8e11-e2badcb87090",
+          "identifier" : "f7306d79-01a0-1000-ce5d-bc06f88ba524",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "success" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "1112f29b-53fc-3f40-8e11-e2badcb87090",
+            "id" : "f7306d78-01a0-1000-5b82-a192a1cf07e8",
+            "name" : "ExecuteSQLRecord",
+            "type" : "PROCESSOR"
+          },
+          "zIndex" : 15
+        } ],
+        "controllerServices" : [ ],
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "1112f29b-53fc-3f40-8e11-e2badcb87090",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "postgreToelasticsearch",
+        "outputPorts" : [ ],
+        "parameterContextName" : "Base config",
+        "position" : {
+          "x" : 3672.0,
+          "y" : -632.0
+        },
+        "processGroups" : [ ],
+        "processors" : [ {
+          "autoTerminatedRelationships" : [ "original", "failure", "retry", "errors", "successful" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-elasticsearch-restapi-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 3,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "1112f29b-53fc-3f40-8e11-e2badcb87090",
+          "identifier" : "f7306d77-01a0-1000-3b3a-d1358415c2d9",
+          "name" : "PutElasticsearchRecord",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 8.0,
+            "y" : -16.0
+          },
+          "properties" : {
+            "Max JSON Field String Length" : "20 MB",
+            "Index Operation" : "index",
+            "Index" : "#{index}",
+            "Record Reader" : "d25142ea-1a75-381f-9347-f5b6d6cb1590",
+            "Retain Record Path ID Field" : "false",
+            "Result Record Writer" : "bfa7d7a9-82d7-3544-a88a-c9740e386240",
+            "Treat Not Found as Success" : "true",
+            "Group Results by Bulk Error Type" : "false",
+            "Log Error Responses" : "false",
+            "Output Error Responses" : "false",
+            "Retain Record Timestamp" : "false",
+            "Batch Size" : "500",
+            "Client Service" : "f3e7db89-75b7-30a6-b246-47fd86dc3197"
+          },
+          "propertyDescriptors" : {
+            "Timestamp Value" : {
+              "displayName" : "Timestamp Value",
+              "identifiesControllerService" : false,
+              "name" : "Timestamp Value",
+              "sensitive" : false
+            },
+            "Max JSON Field String Length" : {
+              "displayName" : "Max JSON Field String Length",
+              "identifiesControllerService" : false,
+              "name" : "Max JSON Field String Length",
+              "sensitive" : false
+            },
+            "Dynamic Templates Record Path" : {
+              "displayName" : "Dynamic Templates Record Path",
+              "identifiesControllerService" : false,
+              "name" : "Dynamic Templates Record Path",
+              "sensitive" : false
+            },
+            "Index Operation" : {
+              "displayName" : "Index Operation",
+              "identifiesControllerService" : false,
+              "name" : "Index Operation",
+              "sensitive" : false
+            },
+            "Index" : {
+              "displayName" : "Index",
+              "identifiesControllerService" : false,
+              "name" : "Index",
+              "sensitive" : false
+            },
+            "Record Reader" : {
+              "displayName" : "Record Reader",
+              "identifiesControllerService" : true,
+              "name" : "Record Reader",
+              "sensitive" : false
+            },
+            "Date Format" : {
+              "displayName" : "Date Format",
+              "identifiesControllerService" : false,
+              "name" : "Date Format",
+              "sensitive" : false
+            },
+            "Retain Record Path ID Field" : {
+              "displayName" : "Retain Record Path ID Field",
+              "identifiesControllerService" : false,
+              "name" : "Retain Record Path ID Field",
+              "sensitive" : false
+            },
+            "Time Format" : {
+              "displayName" : "Time Format",
+              "identifiesControllerService" : false,
+              "name" : "Time Format",
+              "sensitive" : false
+            },
+            "Result Record Writer" : {
+              "displayName" : "Result Record Writer",
+              "identifiesControllerService" : true,
+              "name" : "Result Record Writer",
+              "sensitive" : false
+            },
+            "Treat Not Found as Success" : {
+              "displayName" : "Treat Not Found as Success",
+              "identifiesControllerService" : false,
+              "name" : "Treat Not Found as Success",
+              "sensitive" : false
+            },
+            "Group Results by Bulk Error Type" : {
+              "displayName" : "Group Results by Bulk Error Type",
+              "identifiesControllerService" : false,
+              "name" : "Group Results by Bulk Error Type",
+              "sensitive" : false
+            },
+            "Scripted Upsert Record Path" : {
+              "displayName" : "Scripted Upsert Record Path",
+              "identifiesControllerService" : false,
+              "name" : "Scripted Upsert Record Path",
+              "sensitive" : false
+            },
+            "Index Operation Record Path" : {
+              "displayName" : "Index Operation Record Path",
+              "identifiesControllerService" : false,
+              "name" : "Index Operation Record Path",
+              "sensitive" : false
+            },
+            "Type Record Path" : {
+              "displayName" : "Type Record Path",
+              "identifiesControllerService" : false,
+              "name" : "Type Record Path",
+              "sensitive" : false
+            },
+            "ID Record Path" : {
+              "displayName" : "ID Record Path",
+              "identifiesControllerService" : false,
+              "name" : "ID Record Path",
+              "sensitive" : false
+            },
+            "Log Error Responses" : {
+              "displayName" : "Log Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Log Error Responses",
+              "sensitive" : false
+            },
+            "Script Record Path" : {
+              "displayName" : "Script Record Path",
+              "identifiesControllerService" : false,
+              "name" : "Script Record Path",
+              "sensitive" : false
+            },
+            "Output Error Responses" : {
+              "displayName" : "Output Error Responses",
+              "identifiesControllerService" : false,
+              "name" : "Output Error Responses",
+              "sensitive" : false
+            },
+            "Retain Record Timestamp" : {
+              "displayName" : "Retain Record Timestamp",
+              "identifiesControllerService" : false,
+              "name" : "Retain Record Timestamp",
+              "sensitive" : false
+            },
+            "Timestamp Format" : {
+              "displayName" : "Timestamp Format",
+              "identifiesControllerService" : false,
+              "name" : "Timestamp Format",
+              "sensitive" : false
+            },
+            "Type" : {
+              "displayName" : "Type",
+              "identifiesControllerService" : false,
+              "name" : "Type",
+              "sensitive" : false
+            },
+            "Batch Size" : {
+              "displayName" : "Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Batch Size",
+              "sensitive" : false
+            },
+            "Client Service" : {
+              "displayName" : "Client Service",
+              "identifiesControllerService" : true,
+              "name" : "Client Service",
+              "sensitive" : false
+            },
+            "Index Record Path" : {
+              "displayName" : "Index Record Path",
+              "identifiesControllerService" : false,
+              "name" : "Index Record Path",
+              "sensitive" : false
+            },
+            "Timestamp Record Path" : {
+              "displayName" : "Timestamp Record Path",
+              "identifiesControllerService" : false,
+              "name" : "Timestamp Record Path",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.elasticsearch.PutElasticsearchRecord",
+          "yieldDuration" : "1 sec"
+        }, {
+          "autoTerminatedRelationships" : [ "failure" ],
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "1112f29b-53fc-3f40-8e11-e2badcb87090",
+          "identifier" : "f7306d78-01a0-1000-5b82-a192a1cf07e8",
+          "name" : "ExecuteSQLRecord",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 8.0,
+            "y" : -200.0
+          },
+          "properties" : {
+            "Set Auto Commit" : "true",
+            "Max Wait Time" : "0 seconds",
+            "SQL Query" : "select name, city from users\n",
+            "Normalize Table/Column Names" : "false",
+            "Database Connection Pooling Service" : "51b86696-e365-36d8-9fb5-7c9ab43d30f1",
+            "Default Decimal Scale" : "0",
+            "Fetch Size" : "0",
+            "Output Batch Size" : "0",
+            "Use Avro Logical Types" : "false",
+            "Record Writer" : "bfa7d7a9-82d7-3544-a88a-c9740e386240",
+            "Default Decimal Precision" : "10",
+            "Max Rows Per FlowFile" : "0"
+          },
+          "propertyDescriptors" : {
+            "Set Auto Commit" : {
+              "displayName" : "Set Auto Commit",
+              "identifiesControllerService" : false,
+              "name" : "Set Auto Commit",
+              "sensitive" : false
+            },
+            "Max Wait Time" : {
+              "displayName" : "Max Wait Time",
+              "identifiesControllerService" : false,
+              "name" : "Max Wait Time",
+              "sensitive" : false
+            },
+            "SQL Query" : {
+              "displayName" : "SQL Query",
+              "identifiesControllerService" : false,
+              "name" : "SQL Query",
+              "sensitive" : false
+            },
+            "Normalize Table/Column Names" : {
+              "displayName" : "Normalize Table/Column Names",
+              "identifiesControllerService" : false,
+              "name" : "Normalize Table/Column Names",
+              "sensitive" : false
+            },
+            "Database Connection Pooling Service" : {
+              "displayName" : "Database Connection Pooling Service",
+              "identifiesControllerService" : true,
+              "name" : "Database Connection Pooling Service",
+              "sensitive" : false
+            },
+            "Default Decimal Scale" : {
+              "displayName" : "Default Decimal Scale",
+              "identifiesControllerService" : false,
+              "name" : "Default Decimal Scale",
+              "sensitive" : false
+            },
+            "SQL Post-Query" : {
+              "displayName" : "SQL Post-Query",
+              "identifiesControllerService" : false,
+              "name" : "SQL Post-Query",
+              "sensitive" : false
+            },
+            "Fetch Size" : {
+              "displayName" : "Fetch Size",
+              "identifiesControllerService" : false,
+              "name" : "Fetch Size",
+              "sensitive" : false
+            },
+            "Output Batch Size" : {
+              "displayName" : "Output Batch Size",
+              "identifiesControllerService" : false,
+              "name" : "Output Batch Size",
+              "sensitive" : false
+            },
+            "Use Avro Logical Types" : {
+              "displayName" : "Use Avro Logical Types",
+              "identifiesControllerService" : false,
+              "name" : "Use Avro Logical Types",
+              "sensitive" : false
+            },
+            "Record Writer" : {
+              "displayName" : "Record Writer",
+              "identifiesControllerService" : true,
+              "name" : "Record Writer",
+              "sensitive" : false
+            },
+            "SQL Pre-Query" : {
+              "displayName" : "SQL Pre-Query",
+              "identifiesControllerService" : false,
+              "name" : "SQL Pre-Query",
+              "sensitive" : false
+            },
+            "Default Decimal Precision" : {
+              "displayName" : "Default Decimal Precision",
+              "identifiesControllerService" : false,
+              "name" : "Default Decimal Precision",
+              "sensitive" : false
+            },
+            "Max Rows Per FlowFile" : {
+              "displayName" : "Max Rows Per FlowFile",
+              "identifiesControllerService" : false,
+              "name" : "Max Rows Per FlowFile",
+              "sensitive" : false
+            }
+          },
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "5 min",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.ExecuteSQLRecord",
+          "yieldDuration" : "1 sec"
+        } ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : {
+        "Base config" : {
+          "description" : "",
+          "name" : "Base config",
+          "parameters" : [ {
+            "description" : "",
+            "name" : "elastic",
+            "sensitive" : false,
+            "value" : "http://localhost:9200"
+          }, {
+            "description" : "",
+            "name" : "index",
+            "sensitive" : false,
+            "value" : "nifivariable"
+          } ]
+        }
+      }
+    }
+  }
+}

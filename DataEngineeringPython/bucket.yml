@@ -2,5 +2,8 @@ flows:
   c9e07eae-6dcb-4993-bce0-073c93b88eb4: {ver: 2, file: NYC_311_pipeline_2.snapshot,
     comments: version 5, author: anonymous, created: 1790347243643, flowName: NYC
       311 pipeline 2, flowDesc: NYC API to ElasticSearch}
+  7dd2e59e-0b56-4b6e-a2ac-17a45f1b1ddd: {ver: 1, file: PostgreToElasticsearch.snapshot,
+    comments: version 1, author: anonymous, created: 1791467765243, flowName: PostgreToElasticsearch,
+    flowDesc: querying faker generated data from postgre to elasticsearch}
 layoutVer: 1
 bucketId: 4f2cf949-b080-4778-a152-236c5f49a135
