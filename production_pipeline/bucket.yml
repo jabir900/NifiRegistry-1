@@ -1,0 +1,6 @@
+flows:
+  5eb8377c-5ce9-4738-a800-75ae2309d973: {ver: 1, file: ReadDataLake.snapshot, comments: '',
+    author: anonymous, created: 1792061251420, flowName: ReadDataLake, flowDesc: read
+      data lake from disk}
+layoutVer: 1
+bucketId: 1042f6f4-fdaa-41de-bbfb-25077a55901a
