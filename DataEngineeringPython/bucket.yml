@@ -6,5 +6,8 @@ flows:
     comments: version 2 with group services, author: anonymous, created: 1791811137654,
     flowName: PostgreToElasticsearch, flowDesc: querying faker generated data from
       postgre to elasticsearch}
+  6a2c3718-d30d-42e0-9962-b1ec6b6ba5ae: {ver: 1, file: ReadDataLake.snapshot, comments: '',
+    author: anonymous, created: 1792061184629, flowName: ReadDataLake, flowDesc: reading
+      data lake from disk}
 layoutVer: 1
 bucketId: 4f2cf949-b080-4778-a152-236c5f49a135
